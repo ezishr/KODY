@@ -16,10 +16,6 @@ body {
 
     /* Add a background color or image */
     background-color: white;
-    /* Customize the font, size, and color for text*/
-    font-family: Arial;
-    font-size: 16px;
-    color: black;
 
     /* Adjust the padding and margins */
     padding-top: 10px;
@@ -251,15 +247,29 @@ main {
   padding: 5px 5px;
 }
 
-.aside-about-us-format figure img{
-  border: solid; 
-  border-image: linear-gradient(to right, #004cff, yellow) 5;
-}
-
 .aside-about-us-format article p {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
   font-size: 15px;
+  color: black;
   word-spacing: normal;
   letter-spacing: normal;
+}
+
+.aside-about-us-format article p:link {
+  color: black;
+}
+
+.aside-about-us-format article p:hover {
+  color: yellow;
+}
+
+.aside-about-us-format article p:visited {
+  color: lightpink;
+}
+
+.aside-about-us-format article p:active {
+  color: black;
 }
 
 .aside-about-us-format article a {
@@ -276,6 +286,24 @@ main {
   flex-direction: column; 
   justify-content: space-between;
 }
+
+.must-read-flex-item {
+  flex: 1;
+  position: relative;
+  margin: 0 0;
+  padding: 5px 5px;
+}
+
+.must-read-flex-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px; 
+  background-color: #ccc;
+}
+
 
 .section-text-format{
   font-family: "Acme", sans-serif;
@@ -348,21 +376,6 @@ figure {
   color: #8ebfa1;
 }
 
-a:link {
-  color: black;
-}
-
-a:hover {
-  color: blue;
-}
-
-a:visited {
-  color: mediumpurple;
-}
-
-a:active {
-  color: yellow;
-}
 /* 
 button {
   background-color:  #008CBA;
