@@ -192,6 +192,18 @@ main {
   background-color: #c2e8f5;
 }
 
+#about-us-section a:hover {
+  color: yellow;
+}
+
+#about-us-section a:visited{
+  color: #3a3335;
+}
+
+#about-us-section a:active {
+  color: blue;
+}
+
 .image-container {
   display: block;
   max-width: 100%;
@@ -205,6 +217,7 @@ main {
   border-image-source: none;
   border-radius: 25px;
   box-sizing: border-box; /*makes the element’s padding and border included in the element’s total width and height, but not the margin*/
+  margin: 5px 0;
 }
 
 /* Aside section in About Us section*/
@@ -253,10 +266,12 @@ main {
   color: black;
   word-spacing: normal;
   letter-spacing: normal;
+  padding: 0 0;
+  margin: 0 0;
 }
 
 .aside-about-us-format article p:link {
-  color: black;
+  color: #3a3335;
 }
 
 .aside-about-us-format article p:hover {
@@ -268,7 +283,7 @@ main {
 }
 
 .aside-about-us-format article p:active {
-  color: black;
+  color: blue;
 }
 
 .aside-about-us-format article a {
