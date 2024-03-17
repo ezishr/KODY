@@ -390,6 +390,26 @@ figure {
   color: #8ebfa1;
 }
 
+.big-section-format {
+  display: flex;
+  margin: 10px 0;
+}
+
+.latest-news-format {
+  background-color: #8ebfa1;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  align-items: baseline;
+}
+
+.latest-news-format div {
+  /* flex-grow: 1 0 30%; */
+  width: 30%;
+  max-height: 100%;
+}
+
 /* 
 button {
   background-color:  #008CBA;
