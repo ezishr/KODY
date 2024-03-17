@@ -1,0 +1,376 @@
+/*
+- main axis corresponds to horizontal, cross axis corresponds to vertical
+- display: the format of displaying items, not deal with how 
+position these items
+- flex-direction: flex default main axis is horizontal. this property allows to change direction to column
+- justify-content: deals with how space/position item. flex-start, flex-end, space-between, space-evenly
+- align-items: similar to justify-content but works with cross axis
+- flex-wrap: wrap or unwrap items in one line to flex. default is unwrap.
+- align-content: works only when flex-wrap is set to wrap. cross axis align every contents in the box
+- gap: add gaps between items
+- flex-grow / flex-shrink / flex-basis: unitless values to get items grow or shrink to the empty space. short-hand is flex only
+- align-self: override align-items to position only that self item
+*/
+
+body {
+
+    /* Add a background color or image */
+    background-color: white;
+    /* Customize the font, size, and color for text*/
+    font-family: Arial;
+    font-size: 16px;
+    color: black;
+
+    /* Adjust the padding and margins */
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+}
+
+html {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.web-name-format {
+  font-family: "Acme", sans-serif;
+  color: black;
+}
+
+/* HEADER */
+header {
+  /* This will make the header a flex container */
+  display: flex;
+  flex-wrap: wrap;
+  /* This will distribute space evenly between the items */
+  justify-content: space-between;
+  /* This will align the items vertically in the center */
+  align-items: center;
+}
+
+.header-img {
+  display: block;
+  height: 150px;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.header-h1{
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Acme", sans-serif;
+  color: black;
+  margin: 0;
+}
+
+.header-h2 {
+  text-align: center;
+  font-family: "Acme", sans-serif;
+  color: black;
+  margin: 0;
+}
+
+.material-symbols-outlined{
+  color: black;
+}
+
+header form {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 16px;
+  border-style: solid black;
+  border-radius: 10px;
+  width: 200px;
+  padding: 5px 5px;
+}
+
+.search-button {
+  font-family: "Shantell Sans", sans serif;
+  font-size: 16px;
+  background-color: #00bcf2;
+  border-radius: 10px;
+  border-color: none;
+  border-style: none;
+  width: 50px;
+  margin-left: 3px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/*----------------*/
+
+/* NAVIGATION BAR */
+nav {
+  height: 50px;
+  flex: 100%;
+  display: flex;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: black;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: flex;
+  align-items: center; /* Vertically center. work within display: flex or grid only */
+  justify-content: center; /* Horizontally center */
+  text-align: center;
+  flex: 1;
+}
+
+nav a {
+  text-decoration: none;
+  align-self: center;
+  font-family: "Dosis", sans serif;
+  font-size: 21px;
+  font-weight: bolder;
+  display: inline-block;
+}
+
+nav a:link {
+  color: blue;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+nav a:visited {
+  color: white;
+}
+nav a:active {
+  color: yellow;
+}
+/*----------------*/
+
+/* MAIN */
+main {
+  background-color: white;
+}
+
+.sub-heading{
+  font-family: "Shantell Sans", sans-serif;
+  font-style: oblique;
+  font-weight: light;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 1px 0px 1px black,
+    -1px 0px 1px black,
+    0px 1px 1px black,
+    0px -1px 1px black,
+    0 0 10px #0091ff,
+    0 0 5px #00358a;
+  text-transform: capitalize;
+  letter-spacing: 2.5px;
+  word-spacing: 2px;
+  color: #fce100;
+  padding: 10px;
+  margin: 20px;
+}
+
+/* First Section */
+#about-us-section {
+  display: flex;
+  flex: 5;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 15px;
+  background-color: #c2e8f5;
+}
+
+.image-container {
+  display: inline-block;
+  justify-content: center;
+  padding: 3% 3%;
+  margin: 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: solid;
+  border-image: linear-gradient(to right, #004cff, yellow) 5;
+}
+
+/* Aside section in About Us section*/
+.aside-about-us-format {
+  display: inline-block;
+  flex: 2;
+  padding: 15px 15px;
+  margin-left: 10px;
+  background-color: #c2e8f5;
+}
+
+.aside-about-us-format label {
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.aside-about-us-format h4 {
+  display: flex; 
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Acme', sans-serif; 
+  font-size: 28px; 
+  letter-spacing: 1.5px; 
+  word-spacing: 2px; 
+  color: black; 
+  margin: 0; 
+  padding: 10px 10px;
+}
+
+.aside-about-us-format input {
+  width: 180px;
+  height: 20px;
+  font-size: 12px;
+  font-family: "Shantell Sans", sans-serif;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+
+.aside-about-us-format figure img{
+  border: solid; 
+  border-image: linear-gradient(to right, #004cff, yellow) 5;
+}
+
+.aside-about-us-format article p {
+  font-size: 15px;
+  word-spacing: normal;
+  letter-spacing: normal;
+}
+
+.aside-about-us-format article a {
+  text-decoration: none;
+}
+
+.aside-about-us-format article img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#must-read-article {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;
+}
+
+.section-text-format{
+  font-family: "Acme", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  word-spacing: 2px;
+  color: black;
+  padding: 10px 10px;
+  margin: 0;
+}
+
+.text-format{
+  color: #3a3335;
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  word-break: keep-all;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  padding: 10px 10px;
+  margin: 0;
+}
+
+figcaption {
+  color: #272526;
+  font-family: "Dosis", sans-serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+figure {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  margin: 0;
+  padding: 5px 5px
+}
+
+.basic-button{
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: #40DFEF;
+  color: black;
+  cursor: pointer;
+}
+
+.pill-button {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: #40DFEF;
+  color: black;
+  cursor: pointer;
+}
+
+.rounded-button {
+  font-family: "Montserrat Alternates", sans-serif;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #40DFEF;
+  color: black;
+  cursor: pointer;
+}
+
+
+.sub-section{
+  font-family: "Shantell Sans";
+  color: #8ebfa1;
+}
+
+a:link {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: mediumpurple;
+}
+
+a:active {
+  color: yellow;
+}
+/* 
+button {
+  background-color:  #008CBA;
+  border: none;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  outline-style: offset;
+  padding: 15px 32px;
+  cursor: pointer;
+} */
