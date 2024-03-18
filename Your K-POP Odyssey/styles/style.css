@@ -45,6 +45,7 @@ html {
   display:flex; 
   flex-direction: column; 
   align-content: center;
+  height: 20%;
 }
 
 .header-container header {
@@ -404,21 +405,29 @@ figure {
   background-color: #8ebfa1;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  align-content: space-evenly;
+  /* flex-wrap: wrap;
+  align-content: space-evenly; */
   align-items: stretch;
+  gap: 5px
   border: 2px solid purple;
-}
+  /* height: 20%; */
 
-/* .latest-news-format > * {
-  flex-shrink: 1;
-} */
+}
 
 .latest-news-format div {
   /* flex-grow: 1 0 30%; */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
   width: 30%;
   max-height: 100%;
   border: 1px solid black;
+}
+
+.latest-news-format div img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* 
