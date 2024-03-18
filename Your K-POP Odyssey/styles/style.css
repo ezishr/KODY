@@ -41,7 +41,13 @@ html {
 }
 
 /* HEADER */
-header {
+.header-container {
+  display:flex; 
+  flex-direction: column; 
+  align-content: center;
+}
+
+.header-container header {
   /* This will make the header a flex container */
   display: flex;
   flex-wrap: wrap;
@@ -51,14 +57,14 @@ header {
   align-items: center;
 }
 
-.header-img {
+.header-container header img {
   display: block;
   height: 150px;
   width: 150px;
   margin-left: 10px;
 }
 
-.header-h1{
+.header-container header h1{
   text-transform: uppercase;
   text-align: center;
   font-family: "Acme", sans-serif;
@@ -66,7 +72,7 @@ header {
   margin: 0;
 }
 
-.header-h2 {
+.header-container header h2 {
   text-align: center;
   font-family: "Acme", sans-serif;
   color: black;
@@ -77,7 +83,7 @@ header {
   color: black;
 }
 
-header form {
+.header-container header form {
   display: flex;
   margin-right: 10px;
   align-items: center;
@@ -109,23 +115,22 @@ header form {
 /*----------------*/
 
 /* NAVIGATION BAR */
-nav {
+.header-container nav {
   height: 50px;
   flex: 100%;
   display: flex;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  margin: 5px 0;
   background-color: black;
 }
 
-nav ul {
+.header-container nav ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-nav li {
+.header-container nav li {
   display: flex;
   align-items: center; /* Vertically center. work within display: flex or grid only */
   justify-content: center; /* Horizontally center */
@@ -133,7 +138,7 @@ nav li {
   flex: 1;
 }
 
-nav a {
+.header-container nav a {
   text-decoration: none;
   align-self: center;
   font-family: "Dosis", sans serif;
@@ -142,17 +147,17 @@ nav a {
   display: inline-block;
 }
 
-nav a:link {
+.header-container nav a:link {
   color: white;
 }
 
-nav a:hover {
+.header-container nav a:hover {
   text-decoration: underline;
 }
-nav a:visited {
+.header-container nav a:visited {
   color: white;
 }
-nav a:active {
+.header-container nav a:active {
   color: yellow;
 }
 /*----------------*/
@@ -165,7 +170,7 @@ main {
 .sub-heading{
   font-family: "Shantell Sans", sans-serif;
   font-style: oblique;
-  font-weight: light;
+  /* font-weight: light; */
   font-size: 20px;
   text-align: center;
   text-shadow: 1px 0px 1px black,
@@ -178,7 +183,7 @@ main {
   letter-spacing: 2.5px;
   word-spacing: 2px;
   color: #fce100;
-  padding: 10px;
+  /* padding: 10px; */
   margin: 20px;
 }
 
@@ -401,13 +406,19 @@ figure {
   justify-content: space-around;
   flex-wrap: wrap;
   align-content: space-evenly;
-  align-items: baseline;
+  align-items: stretch;
+  border: 2px solid purple;
 }
+
+/* .latest-news-format > * {
+  flex-shrink: 1;
+} */
 
 .latest-news-format div {
   /* flex-grow: 1 0 30%; */
   width: 30%;
   max-height: 100%;
+  border: 1px solid black;
 }
 
 /* 
