@@ -402,11 +402,12 @@ figure {
 }
 
 .latest-news-format {
-  background-color: #8ebfa1;
+  /* background-color: #8ebfa1; */
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   gap: 10px;
+  margin: 15px 0px;
 }
 
 .latest-news-format div {
@@ -416,7 +417,7 @@ figure {
   justify-content: center;
   width: 30%;
   max-height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   gap: 15px;
 }
 
@@ -424,18 +425,24 @@ figure {
   object-fit: contain;
   width: 100%;
   height: auto;
+  border-radius: 25px;
 }
 
 .latest-news-format-text {
-  justify-content: ;
   margin-top: auto;
   object-fit: contain;
 }
 
 .latest-news-format div p {
-  margin: 0 0;
   text-align: center;
   object-fit: cover;
+  margin: 0 0;
+  padding: 0 0;
+  color: #3a3335;
+  font-family: "Dosis", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  word-spacing: 1px;
 }
 
 .latest-news-format div iframe {
@@ -443,6 +450,24 @@ figure {
   width: 100%;
   height: auto;
   margin: auto;
+  border-radius: 25px;
+}
+
+.latest-news-format div a:link {
+  color: #3a3335;
+  text-decoration: none;
+}
+
+.latest-news-format div a p:hover {
+  color: yellow;
+}
+
+.latest-news-format div a p:visited {
+  color: #3a3335;
+}
+
+.latest-news-format div a p:active {
+  color: blue;
 }
 
 /* 
