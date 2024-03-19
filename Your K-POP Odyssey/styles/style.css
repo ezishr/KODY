@@ -413,29 +413,35 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 30%;
   max-height: 100%;
   border: 1px solid black;
+  gap: 15px;
 }
 
 .latest-news-format div img {
-  /* max-width: 100%; */
-  object-fit: cover;
-  max-height: 80%;
-  max-width: 100%;
-  /* aspect-ratio: 16/9; */
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
+.latest-news-format-text {
+  justify-content: ;
+  margin-top: auto;
+  object-fit: contain;
 }
 
 .latest-news-format div p {
-  text-align: center; /* This centers the text within each div */
-  margin-bottom: auto; /* This pushes the text to the bottom of the div */
+  margin: 0 0;
+  text-align: center;
+  object-fit: cover;
 }
 
 .latest-news-format div iframe {
-  /* object-fit: cover; */
   flex-grow: 1;
-  flex-shrink: 1;
-  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
   margin: auto;
 }
 
