@@ -406,7 +406,7 @@ figure {
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  row-gap: 10px;
+  gap: 10px;
 }
 
 .latest-news-format div {
