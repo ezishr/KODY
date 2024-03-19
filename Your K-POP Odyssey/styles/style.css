@@ -405,29 +405,38 @@ figure {
   background-color: #8ebfa1;
   display: flex;
   justify-content: space-around;
-  /* flex-wrap: wrap;
-  align-content: space-evenly; */
   align-items: stretch;
-  gap: 5px
-  border: 2px solid purple;
-  /* height: 20%; */
-
+  row-gap: 10px;
 }
 
 .latest-news-format div {
-  /* flex-grow: 1 0 30%; */
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
+  flex-direction: column;
+  align-items: center;
   width: 30%;
   max-height: 100%;
   border: 1px solid black;
 }
 
 .latest-news-format div img {
+  /* max-width: 100%; */
+  object-fit: cover;
+  max-height: 80%;
   max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  /* aspect-ratio: 16/9; */
+}
+
+.latest-news-format div p {
+  text-align: center; /* This centers the text within each div */
+  margin-bottom: auto; /* This pushes the text to the bottom of the div */
+}
+
+.latest-news-format div iframe {
+  /* object-fit: cover; */
+  flex-grow: 1;
+  flex-shrink: 1;
+  aspect-ratio: auto;
+  margin: auto;
 }
 
 /* 
