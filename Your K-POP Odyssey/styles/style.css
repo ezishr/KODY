@@ -18,16 +18,14 @@ body {
     background-color: white;
 
     /* Adjust the padding and margins */
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 0 0;
+    margin: 0 0;
 
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+}
 
+main {
+  padding: 0 40px;
+  margin: 10px 80px;
 }
 
 html {
@@ -102,7 +100,7 @@ html {
 
 .search-button {
   font-family: "Shantell Sans", sans serif;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #00bcf2;
   border-radius: 10px;
   border-color: none;
@@ -201,6 +199,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 15px 15px;
+  height: 100%;
   /* background-color: #c2e8f5; */
 }
 
@@ -216,22 +215,6 @@ main {
   color: blue;
 }
 
-.image-container {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  flex-shrink: 0;
-  border: solid yellow;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-  border-image-slice: 0;
-  border-image-source: none;
-  border-radius: 25px;
-  box-sizing: border-box; /*makes the element’s padding and border included in the element’s total width and height, but not the margin*/
-  margin: 5px 0;
-}
-
 /* Aside section in About Us section*/
 .aside-about-us-format {
   display: inline-block;
@@ -240,11 +223,12 @@ main {
   margin-left: 10px;
   background-color: #c2e8f5;
   border-radius: 25px;
+  height: 100%;
 }
 
 .aside-about-us-format label {
   font-family: "Shantell Sans", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0;
 }
@@ -254,18 +238,18 @@ main {
   align-items: center;
   justify-content: flex-start;
   font-family: 'Acme', sans-serif; 
-  font-size: 28px; 
+  font-size: 20px; 
   letter-spacing: 1.5px; 
   word-spacing: 2px; 
   color: black; 
   margin: 0; 
-  padding: 10px 10px;
+  padding: 0 10px;
 }
 
 .aside-about-us-format input {
   width: 180px;
   height: 20px;
-  font-size: 12px;
+  font-size: 10px;
   font-family: "Shantell Sans", sans-serif;
   border: 1px solid black;
   border-radius: 10px;
@@ -281,13 +265,11 @@ main {
 
 .aside-about-us-format article p {
   font-family: "Dosis", sans-serif;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
   color: black;
   word-spacing: normal;
   letter-spacing: normal;
-  padding: 0 0;
-  margin: 0 0;
 }
 
 .aside-about-us-format article p:link {
@@ -323,14 +305,22 @@ main {
   justify-content: space-between;
 }
 
+.must-read-items-box {
+  display: flex; 
+  justify-content: space-around; 
+  align-items: flex-start;
+}
+
 .must-read-flex-item {
+  flex-direction: column;
+  justify-content: space-between;
   flex: 1;
   position: relative;
-  margin: 0 0;
+  margin-top: auto;
   padding: 5px 5px;
 }
 
-.must-read-flex-item:not(:last-child)::after {
+/* .must-read-flex-item:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -338,6 +328,25 @@ main {
   bottom: 0;
   width: 1px; 
   background-color: black;
+} */
+
+.must-read-flex-item img {
+  margin-top: auto;
+}
+
+.image-container {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: solid yellow;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 0;
+  border-image-source: none;
+  border-radius: 25px;
+  box-sizing: border-box; /*makes the element’s padding and border included in the element’s total width and height, but not the margin*/
 }
 
 figcaption {
@@ -345,6 +354,7 @@ figcaption {
   font-family: "Dosis", sans-serif;
   font-size: 13px;
   font-style: italic;
+  font-weight: 600;
 }
 
 figure {
