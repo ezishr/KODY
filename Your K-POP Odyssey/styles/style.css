@@ -188,25 +188,31 @@ main {
   margin: 20px;
 }
 
+.about-us-section-format {
+  display: flex;
+  margin: 10px 0;
+  height:40%;
+}
+
 /* First Section */
-#about-us-section {
+#about-us-sub-section {
   display: flex;
   flex: 5;
   flex-direction: column;
   align-items: center;
   padding: 15px 15px;
-  background-color: #c2e8f5;
+  /* background-color: #c2e8f5; */
 }
 
-#about-us-section a:hover {
+#about-us-sub-section a:hover {
   color: yellow;
 }
 
-#about-us-section a:visited{
+#about-us-sub-section a:visited{
   color: #3a3335;
 }
 
-#about-us-section a:active {
+#about-us-sub-section a:active {
   color: blue;
 }
 
@@ -233,6 +239,7 @@ main {
   padding: 15px 15px;
   margin-left: 10px;
   background-color: #c2e8f5;
+  border-radius: 25px;
 }
 
 .aside-about-us-format label {
@@ -265,6 +272,13 @@ main {
   padding: 5px 5px;
 }
 
+.aside-about-us-format figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .aside-about-us-format article p {
   font-family: "Dosis", sans-serif;
   font-weight: 500;
@@ -293,6 +307,8 @@ main {
 }
 
 .aside-about-us-format article a {
+  display: flex;
+  justify-content: center;
   text-decoration: none;
 }
 
@@ -322,31 +338,6 @@ main {
   bottom: 0;
   width: 1px; 
   background-color: black;
-}
-
-
-.section-text-format{
-  font-family: "Acme", sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  word-spacing: 2px;
-  color: black;
-  padding: 10px 10px;
-  margin: 0;
-}
-
-.text-format{
-  color: #3a3335;
-  font-family: "Dosis", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  word-break: keep-all;
-  word-spacing: 2px;
-  letter-spacing: 1px;
-  line-height: 1.5em;
-  padding: 10px 10px;
-  margin: 0;
 }
 
 figcaption {
@@ -391,23 +382,14 @@ figure {
 }
 
 
-.sub-section{
-  font-family: "Shantell Sans";
-  color: #8ebfa1;
-}
-
-.big-section-format {
-  display: flex;
-  margin: 10px 0;
-}
-
 .latest-news-format {
   /* background-color: #8ebfa1; */
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   gap: 10px;
-  margin: 15px 0px;
+  /* margin: 15px 0px; */
+  padding: 10px 15px
 }
 
 .latest-news-format div {
@@ -469,6 +451,106 @@ figure {
 .latest-news-format div a p:active {
   color: blue;
 }
+
+.section-title-format{ /*Use for section title*/
+  font-family: "Acme", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  word-spacing: 2px;
+  color: black;
+  padding: 10px 15px;
+  margin: 0;
+}
+
+.text-format{ /*Use for section body text*/
+  color: #3a3335;
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  word-break: keep-all;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  padding: 10px 10px;
+  margin: 0;
+}
+
+.section-format {
+  display:flex; 
+  flex-direction: column;
+  max-width: 100%; 
+  height:20%; 
+  /* background-color: burlywood;  */
+  align-content: space-evenly; 
+  margin: 10px 0px;
+}
+
+.spot-light-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+}
+
+.spot-light-body a:link {
+  color: #3a3335;
+  text-decoration-color: #3a3335;
+}
+
+.spot-light-body a:hover {
+  color: #3a3335;
+  text-decoration-color: yellow;
+}
+
+.spot-light-body a:visited {
+  color: #3a3335;
+  text-decoration-color: #3a3335;
+}
+
+.spot-light-body a:active {
+  color: #3a3335;
+  text-decoration-color: blue;
+}
+
+.spot-light-body h4 {
+  margin: 5px 0;
+  padding: 0 0;
+  font-size: 20px;
+  color: #3a3335;
+}
+
+.spot-light-body a h4:hover {
+  color: yellow;
+}
+
+.spot-light-body a h4:visited {
+  color: #3a3335;
+}
+
+.spot-light-body a h4:active {
+  color: blue;
+}
+
+.spot-light-body p {
+  color: #3a3335;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+
+.spot-light-body a p:hover {
+  color: yellow;
+}
+
+.spot-light-body a p:visited {
+  color: #3a3335;
+}
+
+.spot-light-body a p:active {
+  color: blue;
+}
+
 
 /* 
 button {
