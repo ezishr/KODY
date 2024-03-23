@@ -43,7 +43,11 @@ html {
   display:flex; 
   flex-direction: column; 
   align-content: center;
-  height: 20%;
+  width: 100%;
+  position: fixed;
+  top: 0; /*set the space between box to html webpage*/
+  background-color: white;
+  border: 2px solid pink;
 }
 
 .header-container header {
@@ -118,7 +122,6 @@ html {
   height: 50px;
   flex: 100%;
   display: flex;
-  margin: 5px 0;
   background-color: black;
 }
 
@@ -169,7 +172,6 @@ main {
 .sub-heading{
   font-family: "Shantell Sans", sans-serif;
   font-style: oblique;
-  /* font-weight: light; */
   font-size: 20px;
   text-align: center;
   text-shadow: 1px 0px 1px black,
@@ -182,7 +184,6 @@ main {
   letter-spacing: 2.5px;
   word-spacing: 2px;
   color: #fce100;
-  /* padding: 10px; */
   margin: 20px;
 }
 

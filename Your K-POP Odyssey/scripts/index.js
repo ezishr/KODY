@@ -1,13 +1,10 @@
 // TODO: Query for button with an id "theme-button"
-let themeButton = document.getElementById("theme-button");
+let themeButton = document.getElementById("theme-btn");
 
 
 // TODO: Complete the toggleDarkMode function
 const toggleDarkMode = () => {
     document.body.classList.toggle("dark-mode");
-    // Write your code to manipulate the DOM here
-
-
 }
 
 themeButton.addEventListener("click",toggleDarkMode)
