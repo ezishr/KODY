@@ -45,7 +45,8 @@ html {
   flex-direction: column; 
   align-content: center;
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
+  z-index: 1000;
   top: 0; /*set the space between box to html webpage*/
   background-color: white;
   border: 2px solid pink;
