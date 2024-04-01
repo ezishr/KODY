@@ -45,7 +45,7 @@ html {
   flex-direction: column; 
   align-content: center;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   z-index: 1000;
   top: 0; /*set the space between box to html webpage*/
   background-color: white;
@@ -594,4 +594,28 @@ button {
 .dark-mode {
   background-color: grey;
   color: white;
+}
+
+
+/* UNIT 6 PRJ */
+.petition {
+  margin: 20px 20px;
+}
+
+.petition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100;
+  padding-bottom: 50px;
+}
+
+.petition-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.signatures {
+  width: 45%;
+  padding-right: 10px;
 }
