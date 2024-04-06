@@ -10,7 +10,15 @@ themeBtn.addEventListener("click", toggleDarkMode);
 let signNowButton = document.getElementById("sign-now-button");
 
 const addSignature = () => {
-    // Write your code to manipulate the DOM here
-}
+    const username = document.getElementById("username").value;
+    const hometown = document.getElementById("hometown").value;
+    const parentDiv = document.querySelector(".signatures");
+    const newSubmit = document.createElement("p");
 
+    newSubmit.textContent = username + " from " + hometown + " has recommended new ideas!";
+
+    parentDiv.appendChild(newSubmit);
+};
+
+signNowButton.addEventListener("click", addSignature);
 // Add a click event listener to the sign now button here
