@@ -320,37 +320,34 @@ main {
   display: flex; 
   justify-content: space-around; 
   align-items: flex-start;
+  gap: 10px;
 }
 
 .must-read-flex-item {
   flex-direction: column;
-  /* justify-content: space-between; */
   flex: 1;
   position: relative;
-  /* margin-top: auto; */
-  padding: 5px 5px;
+  height: inherit;
+  gap: 10px 10px;
+  align-self: stretch;
 }
 
 .must-read-flex-item img {
   margin-top: auto;
+  height: 50%;
 }
 
-/* .must-read-flex-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 1px; 
-  background-color: black;
-} */
+.must-read-flex-item p {
+  height: 50%;
+  margin-bottom: auto;
+}
 
 
 .image-container {
   display: block;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   flex-shrink: 0;
   border: solid yellow;
   border-image-outset: 0;
