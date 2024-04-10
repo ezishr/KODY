@@ -533,9 +533,23 @@ figure {
   padding: 0 5px;
 }
 
-.spot-light-body > *{
+.spot-light-body > article{
   flex: 1;
   border: 1px solid rgb(246, 16, 55);
+}
+
+.spot-light-body > article > div > img {
+  object-fit: contain;
+  height: 50%;
+  width: 100%;
+  align-self: stretch;
+  border-radius: 25px;
+}
+
+.spot-light-body iframe {
+  width: 100%;
+  border-radius: 25px;
+  align-self: center;
 }
 
 .spot-light-body a:link {
