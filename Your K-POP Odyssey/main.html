@@ -42,7 +42,7 @@
           </form>
         </div>
     </header>
-    <nav>
+    <nav class="navigation-bar">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#must-read">Artists</a></li>
@@ -52,8 +52,8 @@
         <li><a href="#">Rhymt Report</a></li>
         <li><a href="#">Fan Frenzy</a></li>
         <li>
-          <button id="theme-btn">
-            Toggle Dark Mode
+          <button id="dark-mode-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           </button>
         </li>
       </ul>
@@ -62,7 +62,6 @@
 
   
   <!-- About -->
-  <main style="height: 80%">
     <h3 class = "sub-heading">
       Let us guide you to your next favorite artist!
     </h3>
@@ -121,7 +120,7 @@
           
             <figure>
               <a href="https://www.instagram.com/p/C4h2DzjxoN4/?img_index=1" title="Mingyu (SEVENTEEN) - Bvlgari" alt="Mingyu (SEVENTEEN) - Bvlgari" target="_blank">
-                <img class="image-container" src="images/mingyu-bulgari.jpeg" alt="Mingyu (SEVENTEEN) - Bvlgari" title="Mingyu (SEVENTEEN) - Bvlgari" style="height: 80%; width: 80%;">
+                <img class="image-container" src="images/mingyu-bulgari.jpeg" alt="Mingyu (SEVENTEEN) - Bvlgari" title="Mingyu (SEVENTEEN) - Bvlgari" style="height: 60%; width: 60%">
               </a>
               <figcaption>
                 Mingyu at Bvlgari event on Mar 14
@@ -214,8 +213,8 @@
     </div>
   <hr>
 
-    <!--Spot Light Section-->
-    <div class="section-format">
+    <!--SPOT LIGHT-->
+    <!-- <div class="section-format">
       <h2 class="section-title-format">
         Spot Light
       </h2>
@@ -225,47 +224,36 @@
           <h3>MUSIC >></h3>
           <div>
             <iframe src="https://www.youtube.com/embed/KavfOzjpen4?si=vjp-LQbpfA0aGF2r" title="I.M - Lure MV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            
-            <p>Description of first post</p>
           </div>
           <div>
+            <p>Description of first post</p>
             <p>Title of first post</p>
             <p>Description of first post</p>
-          </div>
-          <div>
             <p>Title of first post</p>
             <p>Description of first post</p>
           </div>
         </article>
 
-        <article class="text-format">
-          <h3>COMEBACK >></h3>
-          <div>
-            <img src="images/yuqi.jpeg" title="Yuqi Comeback Poster">
-            <div style="font-size: .8rem">Yesterday</div>
+        <article style="display: flex; flex-direction: column; justify-content: space-around; flex: 1;">
+          <h3 style="height: 5%;">COMEBACK >></h3>
+          <img style="height: 40%; width: 100%;" src="images/yuqi.jpeg" title="Yuqi Comeback Poster">
+          <div style="height: 50%; width: 100%;">
+            <p style="font-size: .8rem">Yesterday</p>2
             <p>YUQI - (G)I-DLE Singles Comeback</p>
-          </div>
-          <br>
-          <div>
             <p>Description of first post</p>
-          </div>
-          <div>
             <p>Title of first post</p>
             <p>Description of first post</p>
           </div>
         </article>
 
-        <article class="text-format">
+        <article style="display: flex; flex-direction: column; justify-content: space-around; flex: 1">
           <h3>TV/FILMS >></h3>
-          <div>
-            <img src="images/queen of tears.jpeg">
+          <img style="height: 40%; width: 100%;" src="images/queen of tears.jpeg">
+          <div style="height: 50%; width: 100%;">
             <p>Title of first post</p>
             <p>Description of first post</p>
-          </div>
-          <div>
             <p>Title of first post</p>
             <p>Description of first post</p>
-          </div>
-          <div>
             <p>Title of first post</p>
             <p>Description of first post</p>
           </div>
@@ -291,12 +279,12 @@
               </p>
             </a>
           </article>
-        </div>
+      </div>
 
-    </div>
+    </div> -->
 
     <hr>
-      <!--UNIT 6 PROJECT-->
+      <!--SIGN UP PETITION-->
     <div class="petition" id="petition">
 
       <h2>You Ask, We Deliver! Artists Content Wishlist 📢</h2>
@@ -332,12 +320,7 @@
 
     </div>
 
-  </main>
 
-  <foot>
-    This is the footer space.
-  </foot>
-  
   <script src="scripts/index.js"></script>
 </body>
 

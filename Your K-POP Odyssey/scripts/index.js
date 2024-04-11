@@ -1,10 +1,11 @@
+// Function Dark Mode
 const toggleDarkMode = () => {
     document.body.classList.toggle("dark-mode");
 }
 
-let themeBtn = document.getElementById("theme-btn");
+let darkModeBtn = document.getElementById("dark-mode-btn");
 
-themeBtn.addEventListener("click", toggleDarkMode);
+darkModeBtn.addEventListener("click", toggleDarkMode);
 
 // Add your query for the sign now button here
 let signNowButton = document.getElementById("sign-now-button");
