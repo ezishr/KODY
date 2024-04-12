@@ -289,7 +289,7 @@ html {
   flex-direction: column;
 }
 
-#instagram figure {
+#instagram > figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
