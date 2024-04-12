@@ -125,12 +125,14 @@ html {
   flex: 1;
   height: 50px;
   background-color: black;
+  gap: 5px;
 }
 
 .navigation-bar ul {
   display: flex;
-  flex: 1;
+  justify-content: space-around;
   padding: 0;
+  width: 100%;
   list-style-type: none;
 }
 
@@ -139,7 +141,6 @@ html {
   align-items: center; /* Vertically center. work within display: flex or grid only */
   justify-content: center; /* Horizontally center */
   text-align: center;
-  flex: 1;
 }
 
 /* UNIT 5 PRJ */
@@ -197,7 +198,9 @@ main {
 
 .about-us-section-format {
   display: flex;
-  margin: 10px 0;
+  border: 2px solid black;
+  margin: 10px 10px;
+  gap: 20px;
   height:40%;
 }
 
@@ -207,8 +210,7 @@ main {
   flex: 5;
   flex-direction: column;
   align-items: center;
-  padding: 15px 15px;
-  max-height: 100%;
+  border: 1px solid blue;
   /* background-color: #c2e8f5; */
 }
 
@@ -226,13 +228,13 @@ main {
 
 /* Aside section in About Us section*/
 .aside-about-us-format {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  padding: 15px 15px;
-  margin-left: 10px;
+  justify-content: space-between;
+  border: 1px solid red;
   background-color: #c2e8f5;
-  border-radius: 25px;
-  height: 100%;
+  align-self: stretch;
 }
 
 .aside-about-us-format h4 {
