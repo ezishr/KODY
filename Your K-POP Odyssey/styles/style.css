@@ -245,50 +245,51 @@ html {
   padding: 10px 20px;
 }
 
-.join-community label {
-  font-family: "Shantell Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0;
-}
-
 .join-community {
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   gap: 10px;
-  padding: 10px;
+  padding: 0px 20px;
 }
 
-.join-community div {
+.join-community > div {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   align-self: stretch;
   gap: 5px;
 }
 
-.join-community div > input {
-  height: 50%;
-  width: auto;
+.join-community > div > label {
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.join-community > div > input {
+  object-fit: contain;
+  height: auto;
+  width: 15rem;
+  margin-left: 20px;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .join-community button {
   margin: 0 0;
 }
 
-.aside-about-us-format input {
-  /* flex-grow: auto; */
-  width: 100%;
-  height: 20px;
-  font-size: 10px;
-  font-family: "Shantell Sans", sans-serif;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 5px 5px;
+#instagram{
+  display: flex;
+  flex-direction: column;
 }
 
-.aside-about-us-format figure {
+#instagram figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
