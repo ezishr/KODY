@@ -228,8 +228,10 @@ html {
   flex: 1;
   justify-content: space-between;
   border: 1px solid red;
+  border-radius: 40px;
   background-color: #c2e8f5;
   align-self: stretch;
+  padding:20px 10px;
 }
 
 .aside-about-us-format h4 {
@@ -287,6 +289,7 @@ html {
 #instagram{
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 #instagram > figure {
@@ -294,6 +297,29 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 0;
+  margin: 0 20px;
+}
+
+#instagram > figure > figcaption {
+  font-family: "Dosis", sans-serif;
+  font-size: 1em;
+  font-style: italic;
+}
+
+#instagram-img {
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 0 0;
+  margin: 0 0 ;
+  border: solid yellow;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 0;
+  border-image-source: 0;
+  border-radius: 25px;
+  box-sizing: border-box;
 }
 
 .aside-about-us-format article p {
@@ -336,6 +362,12 @@ html {
   display: flex; 
   flex-direction: column; 
   justify-content: space-between;
+  margin: 10px 0;
+}
+
+#must-read-article h4 {
+  padding: 0 0;
+  margin: 0 20px;
 }
 
 .must-read-items-box {
@@ -343,8 +375,7 @@ html {
   justify-content: space-around; 
   align-items: flex-start;
   gap: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 20px;
 }
 
 .must-read-flex-item {
@@ -383,22 +414,6 @@ html {
   border-image-source: none;
   border-radius: 25px;
   box-sizing: border-box; /*makes the element’s padding and border included in the element’s total width and height, but not the margin*/
-}
-
-figcaption {
-  color: #272526;
-  font-family: "Dosis", sans-serif;
-  font-size: 13px;
-  font-style: italic;
-  font-weight: 600;
-}
-
-figure {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  margin: 0;
-  padding: 5px 5px
 }
 
 .basic-button{
@@ -498,6 +513,25 @@ figure {
   color: blue;
 }
 
+.spot-light-body-format {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 0;
+  margin: 5px 0;
+
+}
+
+.spot-light-body-format article{
+  border: 1px solid black;
+}
+
+.spot-light-body-format h3 {
+  font-family: "Acme", sans-serif;
+  font-size: 1.25em;
+  margin: 0 0;
+}
+
 .section-title-format{ /*Use for section title*/
   font-family: "Acme", sans-serif;
   font-size: 28px;
@@ -527,108 +561,11 @@ figure {
   flex-direction: column;
   max-width: 100%; 
   height:20%; 
-  /* background-color: burlywood;  */
   align-content: space-evenly; 
   margin: 10px 0px;
 }
 
-.spot-light-body {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 10px;
-  background-color: rgb(230, 192, 155);
-  border: 2px solid black;
-  margin: 0 0;
-  padding: 0 5px;
-}
 
-.spot-light-body h3 {
-  padding: 0 0;
-  margin: 0 0;
-  border: 2px solid blue;
-}
-
-.spot-light-body > article{
-  /* display: flex;
-  flex-direction: column;
-  flex: 1; */
-  border: 1px solid rgb(246, 16, 55);
-  margin: 0 0;
-  padding: 0 0;
-}
-
-.spot-light-body--article-img{
-  object-fit: contain;
-  height: 20%;
-  width: 100%;
-  align-self: stretch;
-  border-radius: 25px;
-}
-
-.spot-light-body iframe {
-  width: 100%;
-  border-radius: 25px;
-  align-self: center;
-}
-
-.spot-light-body a:link {
-  color: #3a3335;
-  text-decoration-color: #3a3335;
-}
-
-.spot-light-body a:hover {
-  color: #3a3335;
-  text-decoration-color: yellow;
-}
-
-.spot-light-body a:visited {
-  color: #3a3335;
-  text-decoration-color: #3a3335;
-}
-
-.spot-light-body a:active {
-  color: #3a3335;
-  text-decoration-color: blue;
-}
-
-.spot-light-body h4 {
-  margin: 5px 0;
-  padding: 0 0;
-  font-size: 20px;
-  color: #3a3335;
-}
-
-.spot-light-body a h4:hover {
-  color: yellow;
-}
-
-.spot-light-body a h4:visited {
-  color: #3a3335;
-}
-
-.spot-light-body a h4:active {
-  color: blue;
-}
-
-.spot-light-body p {
-  color: #3a3335;
-  margin: 5px 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-
-.spot-light-body a p:hover {
-  color: yellow;
-}
-
-.spot-light-body a p:visited {
-  color: #3a3335;
-}
-
-.spot-light-body a p:active {
-  color: blue;
-}
 
 
 /* 
