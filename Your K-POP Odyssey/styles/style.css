@@ -221,6 +221,22 @@ html {
   color: blue;
 }
 
+.about-us-sub-section-img-div {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  width: 90%;
+  border-radius: 50%;
+  align-items: center;
+  box-shadow: 0 5px 10px black;
+  margin-bottom: 3%;
+}
+.about-us-sub-section-img-div img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
 /* Aside section in About Us section*/
 .aside-about-us-format {
   display: flex;
@@ -309,17 +325,11 @@ html {
 
 #instagram-img {
   display: flex;
-  width: auto;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   padding: 0 0;
   margin: 0 0 ;
-  border: solid yellow;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-  border-image-slice: 0;
-  border-image-source: 0;
   border-radius: 25px;
-  box-sizing: border-box;
 }
 
 .aside-about-us-format article p {
@@ -353,11 +363,6 @@ html {
   text-decoration: none;
 }
 
-.aside-about-us-format article img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 #must-read-article {
   display: flex; 
   flex-direction: column; 
@@ -374,7 +379,7 @@ html {
   display: flex; 
   justify-content: space-around; 
   align-items: flex-start;
-  gap: 10px;
+  gap: 20px;
   padding: 0 20px;
 }
 
@@ -387,33 +392,26 @@ html {
   align-self: stretch;
 }
 
-.must-read-flex-item img {
-  margin-top: auto;
-  height: 60%;
+.must-read-img-div {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px black;
+}
+
+.must-read-img-div img {
+  object-fit: cover;
+  flex-shrink: 1;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 
 .must-read-flex-item p {
   height: auto;
   margin-bottom: auto;
-}
-
-.about-us-main-img {
-  display: flex;
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
-  flex-shrink: 1;
-  flex-shrink: 1;
-}
-
-.image-container {
-  border: solid yellow;
-  border-image-outset: 0;
-  border-image-repeat: stretch;
-  border-image-slice: 0;
-  border-image-source: none;
-  border-radius: 25px;
-  box-sizing: border-box; /*makes the element’s padding and border included in the element’s total width and height, but not the margin*/
 }
 
 .basic-button{
@@ -519,7 +517,8 @@ html {
   gap: 10px;
   padding: 0 0;
   margin: 5px 0;
-
+  width: 100%;
+  height: 100%;
 }
 
 .spot-light-body-format article{
@@ -533,34 +532,54 @@ html {
   font-family: "Acme", sans-serif;
   font-size: 1.25em;
   margin: 0 0;
+  margin-bottom: 30px;
 }
 
-.spot-light-body-format p {
+.spot-light-body-format-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40%;
+}
+
+.spot-light-body-format-div img{
+  align-self: center;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 50px;
+}
+
+.spot-light-body-format-div iframe{
+  align-self: center;
+  flex-grow: 1;
+  overflow: hidden;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+.spot-light-body-format-text {
+  margin-top: auto;
+}
+
+.spot-light-body-format-text > p {
+  font-family: "Dosis", sans-serif;
+  margin: 10px 5px;
+}
+
+.spot-light-body-format-text > a > h4 {
+  margin: 5px 5px;
+  font-family: "Acme", sans-serif;
+}
+
+.spot-light-body-format-text > a > p {
+  margin: 20px 5px;
   font-family: "Dosis", sans-serif;
   font-size: 1em;
 }
 
-.spot-light-body-format h4 {
-  font-family: "Acme", sans-serif;  
-}
-
-.spot-light-body-format img {
-  display: flex;
-  height: 20%;
-  width: auto;
-  align-self: center;
-  overflow: hidden;
-}
-
-/*styling on continued*/
-.spot-light-body-format-div {
-}
-
-.spot-light-body-format-div img{
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
 /**/
 .section-title-format{ /*Use for section title*/
   font-family: "Acme", sans-serif;
@@ -684,7 +703,6 @@ html {
 /* UNIT 7 */
 .error {
   border-style: solid;
-  border-width: 2px;
-  border-color: red;
-  background:pink;
+  border: 2px solid red;
+  background: pink;
 }
