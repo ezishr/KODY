@@ -523,7 +523,10 @@ html {
 }
 
 .spot-light-body-format article{
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
+  flex: 1;
 }
 
 .spot-light-body-format h3 {
@@ -532,6 +535,33 @@ html {
   margin: 0 0;
 }
 
+.spot-light-body-format p {
+  font-family: "Dosis", sans-serif;
+  font-size: 1em;
+}
+
+.spot-light-body-format h4 {
+  font-family: "Acme", sans-serif;  
+}
+
+.spot-light-body-format img {
+  display: flex;
+  height: 20%;
+  width: auto;
+  align-self: center;
+  overflow: hidden;
+}
+
+/*styling on continued*/
+.spot-light-body-format-div {
+}
+
+.spot-light-body-format-div img{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+/**/
 .section-title-format{ /*Use for section title*/
   font-family: "Acme", sans-serif;
   font-size: 28px;
@@ -565,46 +595,91 @@ html {
   margin: 10px 0px;
 }
 
-
-
-
-/* 
-button {
-  background-color:  #008CBA;
-  border: none;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  outline-style: offset;
-  padding: 15px 32px;
-  cursor: pointer;
-} */
-
-
-
 /* UNIT 6 PRJ */
 .petition {
-  margin: 20px 20px;
+  margin: 20px 0;
+}
+
+.petition h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  word-spacing: 2px;
+  color: black;
+  padding: 10px 0px;
+  margin: 0;
 }
 
 .petition-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   gap: 20px;
   width: 100;
   padding-bottom: 50px;
 }
 
 .petition-para {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  word-spacing: 2px;
   width: 55%;
   padding-right: 10px;
+  text-align: justify;
 }
 
 .signatures {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  word-spacing: 2px;
   width: 45%;
   padding-right: 10px;
+  align-self: center;
 }
 
+.signatures p {
+  padding: 0 0;
+  margin: 0 10px;
+  text-align: center;
+}
+
+#sign-petition br {
+  margin-bottom: 20px;
+}
+
+#sign-petition label {
+  font-family: 'Shantell Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+}
+#sign-petition input {
+  object-fit: contain;
+  height: auto;
+  width: 15rem;
+  margin-left: 20px;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+  float: right;
+}
+
+#sign-now-button {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#total-suggestions {
+  font-family: 'Acme', sans-serif;
+  font-size: 1.5em;
+  color: blue;
+}
 
 /* UNIT 7 */
 .error {
