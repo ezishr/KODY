@@ -12,49 +12,52 @@ const form = document.getElementById("sign-petition");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const validateForm = () => {
-    let isValidate = true;
+  let isValid = true; // Flag to track overall validity
 
-    const inputs = form.querySelectorAll("input");
+  const inputs = form.querySelectorAll("input");
 
-    for (let i=0; i <= inputs.length; i++){
-        const input = inputs[i];
-        const value = input.value;
+  for (let i = 0; i < inputs.length; i++) { // Use `<` instead of `<=`
+    const input = inputs[i];
+    const value = input.value.trim();
 
-        if (value.trim() === "" || value.length < 2) {
-            isValidate = false;
-            input.classList.add("error");
-        } else {
-            isValidate = true;
-            input.classList.remove("error");
-        };
+    if (value === "" || value.length < 2) {
+      isValid = false;
+      input.classList.add("error");
+    } else {
+      isValid = true; // Reset to true only after a valid input
+      input.classList.remove("error");
+    }
 
-        if (input.id === "email" && !emailRegex.test(value)) {
-            isValidate = false;
-            input.classList.add("error");
-        };
-    };
-    
-    return isValidate;
+    if (input.id === "email" && !emailRegex.test(value)) {
+      isValid = false;
+      input.classList.add("error");
+    }
+  }
+
+  return isValid;
 };
 
-
 const addSignature = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (validateForm) {
-        const username = document.getElementById("username");
-        const hometown = document.getElementById("hometown");
-        const artist = document.getElementById("artist");
-        const parentDiv = document.querySelector(".signatures");
-        const newSubmit = document.createElement("p");
-        newSubmit.textContent = "🖊️" + username + " from " + hometown + " has recommended new ideas for" + artist + "!";
-        parentDiv.appendChild(newSubmit);
+  if (validateForm()) {
+    // Form is valid, create and add the new signature element
+    const username = document.getElementById("username");
+    const hometown = document.getElementById("hometown");
+    const artist = document.getElementById("artist");
+    const parentDiv = document.querySelector(".signatures");
+    const newSubmit = document.createElement("p");
+    newSubmit.textContent = "️" + username.value + " from " + hometown.value + " has recommended new ideas for " + artist.value + "!";
+    parentDiv.appendChild(newSubmit);
 
-        const totalSuggestions = document.querySelectorAll(".signatures p").length;
-        document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
-    } else {
-        alert ("Your input is incorrect! Try again.");
-    };
+    // Update total suggestions (optional)
+    const totalSuggestions = document.querySelectorAll(".signatures p").length;
+    document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
+
+  } else {
+    // Form is invalid, display an alert (optional)
+    alert("Please fill out all fields correctly!");
+  }
 };
 
 
