@@ -20,6 +20,7 @@ body {
     /* Adjust the padding and margins */
     padding: 0 0;
     margin: 50px 50px;
+    padding-bottom: 50px;
 }
 
 #dark-mode-btn{
@@ -671,6 +672,12 @@ html {
   margin-bottom: 20px;
 }
 
+.-petition-div-input-box {
+  display: flex;
+  justify-content: space-around;
+  align-self: stretch;
+}
+
 #sign-petition label {
   font-family: 'Shantell Sans', sans-serif;
   font-size: 1em;
@@ -692,6 +699,7 @@ html {
   width: auto;
   margin-left: 0;
   margin-right: 0;
+  margin-top: 20px;
 }
 
 #total-suggestions {
