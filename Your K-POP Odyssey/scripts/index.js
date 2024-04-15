@@ -8,60 +8,71 @@ darkModeBtn.addEventListener("click", toggleDarkMode);
 
 // Declare inputs of PETITION
 let signNowButton = document.getElementById("sign-now-button");
-const username = document.getElementById("username");
-const hometown = document.getElementById("hometown");
-const artist = document.getElementById("artist");
-const email = document.getElementById("email");
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //to check the valid of email input
-const petitionInputs = document.querySelectorAll("#sign-petition input");
+const form = document.getElementById("sign-petition");
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const validateForm = () => {
-    let containsError = false;
-    petitionInputs.forEach ( input => {
-        input.addEventListener( "input", () => {
-            const currentInputIndex = [...petitionInputs].indexOf(input);
+    let isValidate = true;
 
-            for (let i = 0; i < currentInputIndex; i++) {
-                if (petitionInputs[i].value.trim() === "") {
-                    petitionInputs[i].classList.add("error");
-                    containsError = true;
-                } else {
-                    petitionInputs[i].classList.remove("error");
-                    containsError = false;
-                }
-            }
+    const inputs = form.querySelectorAll("input");
 
-            if (input.id = "email") {
-                if (!emailRegex.test(input.value)) {
-                    input.classList.add("error");
-                    containsError = true;
-                } else {
-                    input.classList.remove("error");
-                    containsError = false;
-                }
-            };
-        });
-            return containsError;
-    });
-    return containsError;
+    for (let i=0; i <= inputs.length; i++){
+        const input = inputs[i];
+        const value = input.value;
+
+        if (value.trim() === "" || value.length < 2) {
+            isValidate = false;
+            input.classList.add("error");
+        } else {
+            isValidate = true;
+            input.classList.remove("error");
+        };
+
+        if (input.id === "email" && !emailRegex.test(value)) {
+            isValidate = false;
+            input.classList.add("error");
+        };
+    };
+    
+    return isValidate;
 };
 
-//FUNC addSignature
+
 const addSignature = (event) => {
-    if (!validateForm()) {
+    event.preventDefault();
+
+    if (validateForm) {
+        const username = document.getElementById("username");
+        const hometown = document.getElementById("hometown");
+        const artist = document.getElementById("artist");
         const parentDiv = document.querySelector(".signatures");
         const newSubmit = document.createElement("p");
         newSubmit.textContent = "🖊️" + username + " from " + hometown + " has recommended new ideas for" + artist + "!";
         parentDiv.appendChild(newSubmit);
 
-        //Update Count of Signatures
         const totalSuggestions = document.querySelectorAll(".signatures p").length;
         document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
     } else {
-        alert("You have put in invalid suggestion! Try again.")
+        alert ("Your input is incorrect! Try again.");
     };
-
-    event.preventDefault();
 };
 
-signNowButton.addEventListener('click', addSignature);
+
+// Make all previous inputs red border if
+for (let i = 0; i < form.querySelectorAll('input').length; i++) {
+    const input = form.querySelectorAll('input')[i]; 
+
+    input.addEventListener('focus', () => {
+      for (let j = i-1; j>=0; j--) {
+        const previousInput = form.querySelectorAll("input")[j];
+        if (previousInput.value.trim() === "") {
+            previousInput.classList.add("error");
+        } else { break; };
+      };
+    });
+};
+
+
+signNowButton.addEventListener("click", addSignature);
+
+
