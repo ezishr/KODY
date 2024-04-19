@@ -12,7 +12,7 @@ const form = document.getElementById("sign-petition");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const validateForm = () => {
-  let isValid = true; // Flag to track overall validity
+  let containsError = false; // Flag to track overall validity
 
   const inputs = form.querySelectorAll("input");
 
@@ -21,10 +21,9 @@ const validateForm = () => {
     const value = input.value.trim();
 
     if (value === "" || value.length < 2) {
-      isValid = false;
+      containsError = true;
       input.classList.add("error");
     } else {
-      isValid = true; // Reset to true only after a valid input
       input.classList.remove("error");
     }
 
@@ -32,16 +31,22 @@ const validateForm = () => {
       isValid = false;
       input.classList.add("error");
     }
-  }
+  };
 
-  return isValid;
+  if(containsError) {
+    addSignature();
+    for (let i = 0; i < form.querySelectorAll("input").length; i++) {
+      form.querySelectorAll("input")[i].value == "";
+      containsError = false;
+    }
+  } else {
+    alert("Error!!");
+  }
 };
 
 const addSignature = (event) => {
   event.preventDefault();
 
-  if (validateForm()) {
-    // Form is valid, create and add the new signature element
     const username = document.getElementById("username");
     const hometown = document.getElementById("hometown");
     const artist = document.getElementById("artist");
@@ -53,16 +58,11 @@ const addSignature = (event) => {
     // Update total suggestions (optional)
     const totalSuggestions = document.querySelectorAll(".signatures p").length;
     document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
-
-  } else {
-    // Form is invalid, display an alert (optional)
-    alert("Please fill out all fields correctly!");
-  }
 };
 
 
 // Make all previous inputs red border if
-for (let i = 0; i < form.querySelectorAll('input').length; i++) {
+for (let i = 0; i <= form.querySelectorAll('input').length; i++) {
     const input = form.querySelectorAll('input')[i]; 
 
     input.addEventListener('focus', () => {
@@ -77,5 +77,4 @@ for (let i = 0; i < form.querySelectorAll('input').length; i++) {
 
 
 signNowButton.addEventListener("click", addSignature);
-
 
