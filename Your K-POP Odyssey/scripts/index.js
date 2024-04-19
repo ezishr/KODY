@@ -12,7 +12,7 @@ const form = document.getElementById("sign-petition");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const validateForm = () => {
-    let isValidate = true;
+    let containsError = false;
 
     const inputs = form.querySelectorAll("input");
 
@@ -21,20 +21,19 @@ const validateForm = () => {
         const value = input.value;
 
         if (value.trim() === "" || value.length < 2) {
-            isValidate = false;
+            containsError = true;
             input.classList.add("error");
         } else {
-            isValidate = true;
             input.classList.remove("error");
         };
 
         if (input.id === "email" && !emailRegex.test(value)) {
-            isValidate = false;
+            containsError = true;
             input.classList.add("error");
         };
     };
     
-    return isValidate;
+    return containsError;
 };
 
 
@@ -42,9 +41,9 @@ const addSignature = (event) => {
     event.preventDefault();
 
     if (validateForm) {
-        const username = document.getElementById("username");
-        const hometown = document.getElementById("hometown");
-        const artist = document.getElementById("artist");
+        const username = document.getElementById("username").value;
+        const hometown = document.getElementById("hometown").value;
+        const artist = document.getElementById("artist").value;
         const parentDiv = document.querySelector(".signatures");
         const newSubmit = document.createElement("p");
         newSubmit.textContent = "🖊️" + username + " from " + hometown + " has recommended new ideas for" + artist + "!";
