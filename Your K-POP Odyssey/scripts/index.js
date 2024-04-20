@@ -16,22 +16,24 @@ const validateForm = () => {
 
     const inputs = form.querySelectorAll("input");
 
-    for (let i=0; i <= inputs.length; i++){
+    for (let i=0; i < inputs.length; i++){
         const input = inputs[i];
-        const value = input.value;
+        const value = input.value.trim();
 
-        if (value.trim() === "" || value.length < 2) {
+        // Check if input is empty or too short
+        if (value === "" || value.length < 2) {
             containsError = true;
             input.classList.add("error");
         } else {
             input.classList.remove("error");
-        };
+        }
 
+        // Check if input is an email and validate format
         if (input.id === "email" && !emailRegex.test(value)) {
             containsError = true;
             input.classList.add("error");
-        };
-    };
+        }
+    }
     
     return containsError;
 };
@@ -40,7 +42,9 @@ const validateForm = () => {
 const addSignature = (event) => {
     event.preventDefault();
 
-    if (validateForm) {
+    const isValid = !validateForm();
+
+    if (isValid) {
         const username = document.getElementById("username").value;
         const hometown = document.getElementById("hometown").value;
         const artist = document.getElementById("artist").value;
@@ -51,9 +55,12 @@ const addSignature = (event) => {
 
         const totalSuggestions = document.querySelectorAll(".signatures p").length;
         document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
+
+        //Make all inputs empty again
+        form.reset();
     } else {
         alert ("Your input is incorrect! Try again.");
-    };
+    }
 };
 
 
@@ -66,8 +73,15 @@ for (let i = 0; i < form.querySelectorAll('input').length; i++) {
         const previousInput = form.querySelectorAll("input")[j];
         if (previousInput.value.trim() === "") {
             previousInput.classList.add("error");
-        } else { break; };
-      };
+        } else { 
+            previousInput.classList.remove("error");
+            break;
+        }
+      }
+    });
+
+    input.addEventListener("input", () => {
+        input.classList.remove("error");
     });
 };
 
