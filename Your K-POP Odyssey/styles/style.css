@@ -19,8 +19,11 @@ body {
 
     /* Adjust the padding and margins */
     padding: 0 0;
-    margin: 50px 50px;
-    padding-bottom: 50px;
+    margin: 0 0;
+}
+
+main {
+  margin: 50px 50px;
 }
 
 #dark-mode-btn{
@@ -45,11 +48,11 @@ html {
   flex-direction: column; 
   align-content: center;
   width: 100%;
-  /* position: fixed; */
-  z-index: 1000;
-  top: 0; /*set the space between box to html webpage*/
   background-color: white;
-  border: 2px solid pink;
+  /* Position for nav bar */
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
 }
 
 .header-container header {
@@ -126,6 +129,7 @@ html {
   height: 50px;
   background-color: black;
   gap: 5px;
+  padding: 0 5px;
 }
 
 .navigation-bar ul {
@@ -194,7 +198,6 @@ html {
 
 .about-us-section-format {
   display: flex;
-  border: 2px solid black;
   margin: 10px 10px;
   gap: 20px;
   height:40%;
@@ -714,3 +717,20 @@ html {
   border: 2px solid red;
   background: pink;
 }
+
+/* UNIT 8 */
+.revealable {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.active {
+  opacity: 1;
+  transition: translateY(0px);
+}
+
+/* .revealable:first-child {
+  margin: 0 0;
+} */

@@ -85,7 +85,72 @@ for (let i = 0; i < form.querySelectorAll('input').length; i++) {
     });
 };
 
-
 signNowButton.addEventListener("click", addSignature);
 
+// UNIT 8
+let animation = {
+    revealDistance: "300px",
+    initialOpacity: 0,
+    transitionDelay: '0s',
+    transitionDuration: '1s',
+    transitionProperty: "all",
+    transitionTimingFuction: 'ease',
+};
 
+// Select all containers having .revealable class
+let revealableContainers = document.querySelectorAll(".revealable");  
+
+// Function to loop to each container having .revealable class
+const reveal = () => {
+    for (let i = 0; i < revealableContainers.length; i++) {
+        // Gets the height of the browser window.
+        let windowHeight = window.innerHeight;
+
+        // Calculates the distance between the top of the current revealable container and the top of the viewport
+        let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
+
+        if (topOfRevealableContainer < windowHeight - parseInt(animation.revealDistance)) {
+            revealableContainers[i].classList.add("active");
+        } else {
+            revealableContainers[i].classList.remove("active");
+        }
+    }
+};
+
+window.addEventListener("scroll", reveal);
+
+
+// stretch section
+let reduceMotionBtn = document.getElementById("reduce-motion");
+
+let reduceMotionEnabled = true;
+
+const reduceMotion = () => {    
+
+    if (reduceMotionEnabled) {
+        animation.transitionDuration = '1s';
+        animation.transitionTimingFunction = 'ease';
+        
+        for (let i = 0; i < revealableContainers.length; i++) {
+            revealableContainers[i].style.transitionDelay = animation.transitionDelay;
+            revealableContainers[i].style.transitionDuration = animation.transitionDuration;
+            revealableContainers[i].style.transitionTimingFunction = animation.transitionTimingFunction;
+        }
+
+    } else {
+        animation.transitionDuration = '0s';
+        animation.transitionTimingFuction = 'none';
+    
+        for (let i= 0; i < revealableContainers.length; i++) {
+            revealableContainers[i].style.transitionDelay = animation.transitionDelay;
+            revealableContainers[i].style.transitionDuration = animation.transitionDuration;
+            revealableContainers[i].style.transitionTimingFuction = animation.transitionTimingFuction;
+        };
+
+        console.log("`Reduce Motion is in: " + reduceMotionEnabled);
+    }
+
+    reduceMotionEnabled =!reduceMotionEnabled;
+};
+
+reduceMotionBtn.addEventListener("click", reduceMotion);
