@@ -12,13 +12,20 @@ const form = document.getElementById("sign-petition");
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const validateForm = () => {
+    const inputs = form.querySelectorAll("input");
+
     let containsError = false;
 
-    const inputs = form.querySelectorAll("input");
+    // let person = {
+    //     username: inpust[0].value,
+    //     hometown: inputs[1].value,
+    //     artist: inputs[2].value,
+    //     email: inputs[3].value,
+    // };
 
     for (let i=0; i < inputs.length; i++){
         const input = inputs[i];
-        const value = input.value.trim();
+        const value = inputs[i].value.trim();
 
         // Check if input is empty or too short
         if (value === "" || value.length < 2) {
@@ -86,6 +93,7 @@ for (let i = 0; i < form.querySelectorAll('input').length; i++) {
 };
 
 signNowButton.addEventListener("click", addSignature);
+
 
 // UNIT 8
 let animation = {
