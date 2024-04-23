@@ -114,6 +114,7 @@ const validateForm = () => {
                         person.email = value;
                     }
                     break;
+                default: break;
             }
         }
     
@@ -146,7 +147,7 @@ const addSignature = (event) => {
 };
 
 // UNIT 9
-const toggleModal = (event) => {
+const toggleModal = () => {
 
     let modal = document.getElementById('thanks-modal');
     let modalContent = document.getElementById('thanks-modal-content');
