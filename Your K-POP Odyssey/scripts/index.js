@@ -14,6 +14,8 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const validateForm = () => {
     const inputs = form.querySelectorAll("input");
 
+    let person = {};
+
     let containsError = false;
 
     // let person = {
@@ -33,31 +35,53 @@ const validateForm = () => {
             input.classList.add("error");
         } else {
             input.classList.remove("error");
+            switch (input.id) {
+                case "username":
+                    person.username = value;
+                    break;
+                case "hometown":
+                    person.hometown = value;
+                    break;
+                case "artist":
+                    person.artist = value;
+                    break;
+                case "email":
+                    if(!emailRegex.test(value)) {
+                        containsError = true;
+                        input.classList.add("error")
+                    } else {
+                        input.classList.remove("error");
+                        person.email = value;
+                    }
+                    break;
+            }
         }
 
         // Check if input is an email and validate format
-        if (input.id === "email" && !emailRegex.test(value)) {
-            containsError = true;
-            input.classList.add("error");
-        }
+        // if (input.id === "email" && !emailRegex.test(value)) {
+        //     containsError = true;
+        //     input.classList.add("error");
+        // }
     }
     
-    return containsError;
+    return {person, containsError};
 };
 
 
 const addSignature = (event) => {
     event.preventDefault();
 
-    const isValid = !validateForm();
+    // const isValid = !validateForm();
 
-    if (isValid) {
-        const username = document.getElementById("username").value;
-        const hometown = document.getElementById("hometown").value;
-        const artist = document.getElementById("artist").value;
+    let {person, containsError} = validateForm();
+
+    if (!containsError) {
+        // const username = document.getElementById("username").value;
+        // const hometown = document.getElementById("hometown").value;
+        // const artist = document.getElementById("artist").value;
         const parentDiv = document.querySelector(".signatures");
         const newSubmit = document.createElement("p");
-        newSubmit.textContent = "🖊️" + username + " from " + hometown + " has recommended new ideas for" + artist + "!";
+        newSubmit.textContent = "🖊️" + person.username + " from " + person.hometown + " has recommended new ideas for " + person.artist + " with mail: " + person.email + "!";
         parentDiv.appendChild(newSubmit);
 
         const totalSuggestions = document.querySelectorAll(".signatures p").length;
@@ -162,3 +186,12 @@ const reduceMotion = () => {
 };
 
 reduceMotionBtn.addEventListener("click", reduceMotion);
+
+// UNIT 9
+const toggleModal = (person) => {
+    let modal = document.getElementById('thanks-modal');
+    let modalContent = document.getElementById('thanks-modal-content');
+
+    modal.style.display('flex');
+    
+}

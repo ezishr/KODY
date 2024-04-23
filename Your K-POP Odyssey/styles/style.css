@@ -735,7 +735,7 @@ html {
 
 /* the modal that covers the background and prevents user interactions */
 .modal {
-  /* display: none;*/
+  display: none;
   position: fixed; /* keeps the modal in one place */
   z-index: 1000; /* positions the modal on top of all other elements on the screen */
   left: 0;
