@@ -45,7 +45,7 @@ let reduceMotionEnabled = true;
 
 const reduceMotion = () => {    
 
-    if (reduceMotionEnabled) {
+    if (!reduceMotionEnabled) {
         animation.transitionDuration = '1s';
         animation.transitionTimingFunction = 'ease';
         
@@ -81,70 +81,52 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const validateForm = () => {
     const inputs = form.querySelectorAll("input");
 
-    let person = {};
+    let person = {
+        name: document.getElementById("name"),
+        hometown: document.getElementById("hometown"),
+        artist: document.getElementById("artist"),
+        email: document.getElementById("email")
+    };
 
     let containsError = false;
 
-    for (let i=0; i < inputs.length; i++){
-        const input = inputs[i];
-        const value = inputs[i].value.trim();
-
-        // Check if input is empty or too short
-        if (value === "" || value.length < 2) {
+    for (let prop in person) {
+        if (person[prop].value.trim() === "" || person[prop].value.length < 2) {
             containsError = true;
-            input.classList.add("error");
+            person[prop].classList.add("error");
         } else {
-            input.classList.remove("error");
-            switch (input.id) {
-                case "username":
-                    person.username = value;
-                    break;
-                case "hometown":
-                    person.hometown = value;
-                    break;
-                case "artist":
-                    person.artist = value;
-                    break;
-                case "email":
-                    if(!emailRegex.test(value)) {
-                        containsError = true;
-                        input.classList.add("error")
-                    } else {
-                        input.classList.remove("error");
-                        person.email = value;
-                    }
-                    break;
-                default: break;
-            }
+            person[prop].classList.remove("error");
         }
-    
-    return {person, containsError};
-}};
 
+        //Check email
+        if (prop === "email" && !emailRegex.test(person[prop].value.trim())) {
+            person[prop].classList.add("error");
+            containsError = true;
+        };
+    }
+    return {person, containsError};
+};
 
 const addSignature = (event) => {
     event.preventDefault();
-
-    // const isValid = !validateForm();
 
     let {person, containsError} = validateForm();
 
     if (!containsError) {
         const parentDiv = document.querySelector(".signatures");
         const newSubmit = document.createElement("p");
-        newSubmit.textContent = "🖊️" + person.username + " from " + person.hometown + " has recommended new ideas for " + person.artist + " with mail: " + person.email + "!";
+        newSubmit.textContent = "🖊️" + person.username.value + " from " + person.hometown.value + " has recommended new ideas for " + person.artist.value + " with mail: " + person.email.value + "!";
         parentDiv.appendChild(newSubmit);
 
         const totalSuggestions = document.querySelectorAll(".signatures p").length;
         document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
 
-        //Make all inputs empty again
-        toggleModal();
         form.reset();
     } else {
         alert ("Your input is incorrect! Try again.");
     }
 };
+
 
 // UNIT 9
 const toggleModal = () => {
