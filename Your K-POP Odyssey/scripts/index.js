@@ -140,7 +140,7 @@ const toggleModal = () => {
     modal.style.display = 'flex';
     
     //Set the content
-    modalContent.textContent = `Thank you, ${person.username}`;
+    modalContent.textContent = `Thank you, ${person.username.value}`;
     setTimeout (
         () => {
             modal.style.display = 'none';
