@@ -128,11 +128,22 @@ const addSignature = (event) => {
         alert ("Your input is incorrect! Try again.");
     }
 };
+// Animation image in modal
+let scaleFactor = 1;
 
+const modalImage = document.getElementById("modal-img");
 
-// UNIT 9
+const scaleImage = () => {
+    if (scaleFactor === 1) {
+        scaleFactor = 0.8;
+    } else {
+        scaleFactor = 1;
+    };
+    modalImage.style.transform = `scale(${scaleFactor})`;
+}
+
+// Toggle Modal function
 const toggleModal = () => {
-
     let modal = document.getElementById('thanks-modal');
     let modalContent = document.getElementById('thanks-modal-content');
     let person = validateForm().person;
@@ -141,11 +152,18 @@ const toggleModal = () => {
     
     //Set the content
     modalContent.textContent = `Thank you, ${person.username.value}`;
+    
+    let intervalId = setInterval(() => {
+        scaleImage();
+    }, 500);
+
     setTimeout (
         () => {
             modal.style.display = 'none';
+            clearInterval(intervalId); 
+            //If you don't have a call to clearInterval, the interval created by setInterval will continue to execute indefinitely, even after the timeout set by setTimeout expires and the modal is hidden. This can lead to unnecessary resource consumption and potential performance issues over time, especially if the interval function involves heavy computations or DOM manipulations.
         },
-        3000
+        10000000
     );
 };
 
@@ -172,3 +190,12 @@ for (let i = 0; i < form.querySelectorAll('input').length; i++) {
 };
 
 signNowButton.addEventListener("click", addSignature);
+
+// Close Modal
+const modalButton = document.getElementById("modal-button");
+
+const closeModal = () => {
+    document.getElementById("thanks-modal").style.display = "none";
+};
+
+modalButton.addEventListener("click", closeModal);

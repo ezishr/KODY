@@ -112,7 +112,6 @@ html {
   font-size: 14px;
   background-color: #00bcf2;
   border-radius: 10px;
-  border-color: none;
   border-style: none;
   width: 50px;
   margin-left: 3px;
@@ -768,4 +767,16 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#modal-button {
+  font-family: "Shantell Sans", sans serif;
+  font-size: 14px;
+  background-color: #00bcf2;
+  border-radius: 10px;
+  border-style: none;
+  width: 50px;
+  margin-left: 3px;
+  padding: 5px;
+  cursor: pointer;
 }
