@@ -82,7 +82,7 @@ const validateForm = () => {
     const inputs = form.querySelectorAll("input");
 
     let person = {
-        name: document.getElementById("name"),
+        username: document.getElementById("username"),
         hometown: document.getElementById("hometown"),
         artist: document.getElementById("artist"),
         email: document.getElementById("email")
@@ -121,6 +121,8 @@ const addSignature = (event) => {
         const totalSuggestions = document.querySelectorAll(".signatures p").length;
         document.getElementById("total-suggestions").textContent = "Current total suggestions: " + totalSuggestions;
 
+        toggleModal();
+
         form.reset();
     } else {
         alert ("Your input is incorrect! Try again.");
@@ -138,7 +140,7 @@ const toggleModal = () => {
     modal.style.display = 'flex';
     
     //Set the content
-    modalContent.textContent = `Thank you, ${person.name}`;
+    modalContent.textContent = `Thank you, ${person.username}`;
     setTimeout (
         () => {
             modal.style.display = 'none';
