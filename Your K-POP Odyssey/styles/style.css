@@ -23,13 +23,45 @@ body {
 }
 
 main {
-  margin: 50px 50px;
+  margin: 30px 50px;
+}
+
+.nav-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #dark-mode-btn{
   padding: 10px 10px;
   background-color: transparent;
   border: 0;
+  cursor: pointer;
+}
+
+.revealable {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.active {
+  opacity: 1;
+  transition: translateY(0px);
+}
+
+#reduce-motion {
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 0.8em;
+  color: white;
+  background-color: black;
+  border-color: white;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 0;
+  padding: 0 0;
+  cursor: pointer;
 }
 
 html {
@@ -49,6 +81,7 @@ html {
   align-content: center;
   width: 100%;
   background-color: white;
+  height: fit-content;
   /* Position for nav bar */
   position: sticky;
   top: 0px;
@@ -146,7 +179,6 @@ html {
   text-align: center;
 }
 
-/* UNIT 5 PRJ */
 .dark-mode {
   background-color: rgb(33, 33, 33);
   color: white;
@@ -174,7 +206,6 @@ html {
 .navigation-bar a:active {
   color: yellow;
 }
-/*----------------*/
 
 
 .sub-heading{
@@ -182,12 +213,12 @@ html {
   font-style: oblique;
   font-size: 20px;
   text-align: center;
-  text-shadow: 1px 0px 1px black,
-    -1px 0px 1px black,
+  text-shadow: 2px 0px 1px black,
+    -2px 0px 1px black,
     0px 1px 1px black,
     0px -1px 1px black,
-    0 0 10px #0091ff,
-    0 0 5px #00358a;
+    0 0 0px,
+    0 0 0px;
   text-transform: capitalize;
   letter-spacing: 2.5px;
   word-spacing: 2px;
@@ -208,7 +239,6 @@ html {
   flex: 5;
   flex-direction: column;
   align-items: center;
-  border: 1px solid blue;
   /* background-color: #c2e8f5; */
 }
 
@@ -715,19 +745,6 @@ html {
   border-style: solid;
   border: 2px solid red;
   background: pink;
-}
-
-/* UNIT 8 */
-.revealable {
-  position: relative;
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all 2s ease;
-}
-
-.active {
-  opacity: 1;
-  transition: translateY(0px);
 }
 
 /* UNIT 9 */
