@@ -53,7 +53,8 @@ There are a few ways to open the website:
 4. **View the Website**:
 Once you open `main.html`, you will see the homepage of your K-pop fan site. Explore the different sections such as artist profiles and news updates.
 
-### Contact
+## Contact
+
 Eirlys Vo - [@LinkedIn](https://www.linkedin.com/in/phiquyvo/) - vopq@mail.uc.edu
 
 Project Link: [https://github.com/ezishr/KODY](https://github.com/ezishr/KODY)
